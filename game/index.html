@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sky Courier: Ring Run — a tiny flight game</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div id="wrap">
+  <header id="topbar">
+    <div id="brand">✈️ SKY COURIER <span>· Ring Run</span></div>
+    <div id="top-buttons">
+      <button id="btn-pause" type="button">⏸ Pause</button>
+      <button id="btn-mute" type="button">🔊 Sound</button>
+      <button id="btn-restart-top" type="button">↻ Restart</button>
+    </div>
+  </header>
+  <div id="stage">
+    <canvas id="game" width="800" height="600"></canvas>
+    <div id="screen-start" class="overlay">
+      <h1>SKY COURIER</h1>
+      <h2>Ring Run</h2>
+      <p class="tagline">Fly the little red courier plane over the valley. Thread the golden rings,
+        gather sky stars, dodge balloons and birds, watch your fuel — and bring her home
+        on runway 27.</p>
+      <ul class="missions">
+        <li><b>Mission 1 — Ring Run:</b> fly through 8 golden rings</li>
+        <li><b>Mission 2 — Star Harvest:</b> collect 12 sky stars</li>
+        <li><b>Mission 3 — Home Run:</b> land gently on runway 27</li>
+      </ul>
+      <p class="controls">↑ / W climb &nbsp;·&nbsp; ↓ / S dive &nbsp;·&nbsp; ← → throttle &nbsp;·&nbsp; SPACE boost<br>
+        Mouse: steer toward the pointer, hold to boost &nbsp;·&nbsp; P pause &nbsp;·&nbsp; R restart &nbsp;·&nbsp; M mute</p>
+      <button id="btn-start" type="button" class="big">▶ TAKE OFF</button>
+      <p id="best-line" class="best"></p>
+    </div>
+    <div id="screen-pause" class="overlay hidden">
+      <h1>PAUSED</h1>
+      <p class="tagline">The valley waits. Your fuel does not burn while paused.</p>
+      <button id="btn-resume" type="button" class="big">▶ RESUME</button>
+      <button id="btn-restart-pause" type="button">↻ Restart flight</button>
+      <button id="btn-quit-pause" type="button">✕ Back to menu</button>
+    </div>
+    <div id="screen-over" class="overlay hidden">
+      <h1>FLIGHT OVER</h1>
+      <p class="tagline">Three strikes and the courier is grounded. The valley will still be there tomorrow.</p>
+      <p id="final-stats" class="stats"></p>
+      <button id="btn-restart-over" type="button" class="big">↻ FLY AGAIN</button>
+    </div>
+    <div id="screen-win" class="overlay hidden">
+      <h1>🛬 LANDED!</h1>
+      <h2>Welcome home, courier.</h2>
+      <p class="tagline">All three missions complete — rings threaded, stars gathered, wheels on runway 27.</p>
+      <p id="win-stats" class="stats"></p>
+      <button id="btn-restart-win" type="button" class="big">↻ FLY AGAIN</button>
+    </div>
+  </div>
+  <footer id="hint">Arrows / WASD to fly · SPACE to boost · P pause · R restart · M mute · Runs fully offline, no downloads.</footer>
+</div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
